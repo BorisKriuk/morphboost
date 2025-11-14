@@ -273,7 +273,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 If you use MorphBoost in your research, please cite:
 
-"""bibtex
+```
 @software{morphboost2025,
   author = {Kriuk, Boris},
   title = {MorphBoost: Self-Organizing Universal Gradient Boosting},
@@ -281,7 +281,7 @@ If you use MorphBoost in your research, please cite:
   publisher = {GitHub},
   url = {https://github.com/BorisKriuk/morphboost}
 }
-"""
+```
 
 ---
 
