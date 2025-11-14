@@ -41,6 +41,10 @@ cd morphboost
 Install dependencies:
 pip install -r requirements.txt
 
+### Requirements
+numpy>=1.20.0
+scikit-learn>=1.0.0
+
 ## 🚀 Quick Start
 
 ### Binary Classification
