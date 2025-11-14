@@ -57,8 +57,7 @@ pip install -r requirements.txt
 ## 🚀 Quick Start
 
 ### Binary Classification
-
-"""python
+```
 from morphboost import MorphBoost
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -78,11 +77,11 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 probabilities = model.predict_proba(X_test)
 importance = model.feature_importances_
-"""
+```
 
 ### Multiclass Classification
 
-"""python
+```
 from sklearn.datasets import load_iris
 
 X, y = load_iris(return_X_y=True)
@@ -97,11 +96,11 @@ model = MorphBoost(
 )
 model.fit(X_train, y_train)
 proba = model.predict_proba(X_test)
-"""
+```
 
 ### Regression
 
-"""python
+```
 from sklearn.datasets import make_regression
 
 X, y = make_regression(n_samples=1000, n_features=10, random_state=42)
@@ -110,15 +109,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 model = MorphBoost(n_estimators=100, learning_rate=0.1, max_depth=6, reg_lambda=1.0)
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
-"""
+```
 
 ### Early Stopping
 
-"""python
+```
 model = MorphBoost(n_estimators=1000, learning_rate=0.1)
 model.fit(X_train, y_train, eval_set=[(X_val, y_val)], early_stopping_rounds=10)
-"""
-
+```
 ---
 
 ## 🎛️ Parameters
@@ -199,17 +197,17 @@ MorphBoost introduces **adaptive split functions** that evolve during training:
 ### Key Innovations
 
 Traditional XGBoost split score:
-"""
+```
 score = gradient² / (hessian + λ)
-"""
+```
 
 MorphBoost morphing split score:
-"""
+```
 normalized_g = (gradient - μ_g) / σ_g
 gradient_score = gradient² / (hessian + λ)
 info_score = |normalized_g| × log(|gradient| + 1) / smoothing
 score = 0.7 × gradient_score + 0.3 × info_score × morph_weight
-"""
+```
 
 ---
 
@@ -230,9 +228,9 @@ Example visualization outputs in benchmark_results/ directory.
 
 ## 🧪 Running Benchmarks
 
-"""bash
+```
 python test_run.py
-"""
+```
 
 Generates:
 
@@ -260,14 +258,6 @@ For major changes:
 ## 📝 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- Inspired by XGBoost, LightGBM, and CatBoost
-- Built on scikit-learn's robust API
-- Benchmark datasets from UCI ML Repository and sklearn
 
 ---
 
