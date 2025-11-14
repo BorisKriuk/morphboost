@@ -48,7 +48,7 @@
 
 ## 📦 Installation
 
-bash ```
+```
 git clone https://github.com/BorisKriuk/morphboost.git
 cd morphboost
 pip install -r requirements.txt
